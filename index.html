@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tournament Hub | Free Fire</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080808;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background: #0d0d0d;
+  border-bottom: 1px solid #321010;
+}
+
+.logo {
+  font-family: 'Orbitron';
+  font-size: 23px;
+  color: #ff2424;
+  font-weight: 900;
+}
+
+.logo span {
+  color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 13px;
+}
+
+.hero {
+  min-height: 520px;
+  padding: 100px 8%;
+  display: flex;
+  align-items: center;
+  background:
+  linear-gradient(90deg,#080808 15%,rgba(8,8,8,.88),rgba(8,8,8,.3)),
+  url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600')
+  center/cover;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tag {
+  color: #ff2929;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-family: 'Orbitron';
+  font-size: clamp(38px,7vw,76px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #ff2424;
+}
+
+.hero p {
+  color: #bbb;
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 15px 32px;
+  background: #ed1717;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+  color: #e00000;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 75px 8%;
+}
+
+.section-title {
+  font-family: 'Orbitron';
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.section-title span {
+  color: #ff2525;
+}
+
+.subtitle {
+  color: #999;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
+}
+
+.detail-card {
+  padding: 28px;
+  background: #151515;
+  border: 1px solid #351515;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.detail-card h3 {
+  color: #ff2828;
+  margin-bottom: 10px;
+}
+
+.detail-card p {
+  color: #ccc;
+}
+
+.register {
+  background: linear-gradient(180deg,#100707,#080808);
+}
+
+.form-box {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px;
+  background: #121212;
+  border: 1px solid #8b1717;
+  border-radius: 14px;
+  box-shadow: 0 0 35px #4b090930;
+}
+
+.form-box h3 {
+  font-family: 'Orbitron';
+  color: #ff2929;
+  margin-bottom: 25px;
+}
+
+.team-input {
+  margin-bottom: 30px;
+  padding: 22px;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.team-input h4 {
+  color: #ff3636;
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  color: #ddd;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  background: #090909;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ff2525;
+  box-shadow: 0 0 8px #ff252555;
+}
+
+.submit {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  background: #e91c1c;
+  color: white;
+  font-weight: 900;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit:hover {
+  background: #ff4545;
+}
+
+.note {
+  color: #999;
+  font-size: 12px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+footer {
+  background: #111;
+  padding: 30px;
+  text-align: center;
+  color: #888;
+  border-top: 1px solid #3b1111;
+}
+
+footer span {
+  color: #ff2525;
+}
+
+@media(max-width:600px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 75px 6%;
+  }
+
+  section {
+    padding: 55px 5%;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TOURNAMENT <span>HUB</span></div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#details">DETAILS</a>
+    <a href="#register">REGISTER</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">THE ULTIMATE ESPORTS EXPERIENCE</div>
+
+    <h1>ENTER THE <span>BATTLE.</span><br>CLAIM THE GLORY.</h1>
+
+    <p>
+      Build your squad. Show your skills.
+      Compete against the best and become
+      the champion of Tournament Hub.
+    </p>
+
+    <a href="#register" class="btn">REGISTER YOUR SQUAD →</a>
+  </div>
+</div>
+
+<section id="details">
+  <h2 class="section-title">TOURNAMENT <span>INFO</span></h2>
+  <p class="subtitle">Everything you need to know before entering the battle.</p>
+
+  <div class="details">
+    <div class="detail-card">
+      <h3>4 PLAYERS</h3>
+      <p>One complete squad</p>
+    </div>
+
+    <div class="detail-card">
+      <h3>FREE FIRE</h3>
+      <p>Battle Royale Tournament</p>
+    </div>
+
+    <div class="detail-card">
+      <h3>REGISTRATION</h3>
+      <p>WhatsApp confirmation</p>
+    </div>
+  </div>
+</section>
+
+<section class="register" id="register">
+
+  <h2 class="section-title">SQUAD <span>REGISTRATION</span></h2>
+  <p class="subtitle">Enter all four players' details to register your team.</p>
+
+  <div class="form-box">
+
+    <form id="registrationForm">
+
+      <h3>TEAM INFORMATION</h3>
+
+      <label>Team Name</label>
+      <input type="text" id="teamName"
+      placeholder="Enter your squad name" required>
+
+      <div id="players"></div>
+
+      <button type="submit" class="submit">
+        SUBMIT REGISTRATION VIA WHATSAPP →
+      </button>
+
+      <p class="note">
+        All 4 players must provide valid details.
+        Your registration will be sent to Tournament Hub WhatsApp.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<footer>
+  <h3>TOURNAMENT <span>HUB</span></h3>
+  <p>Play Hard. Fight Fair. Become a Champion.</p>
+  <p>© 2026 Tournament Hub. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+const playersDiv = document.getElementById("players");
+
+for(let i = 1; i <= 4; i++) {
+
+  playersDiv.innerHTML += `
+    <div class="team-input">
+      <h4>PLAYER ${i}</h4>
+
+      <label>Player ${i} Name</label>
+      <input type="text" name="name${i}"
+      placeholder="Enter player name" required>
+
+      <label>Free Fire UID</label>
+      <input type="text" name="uid${i}"
+      placeholder="Enter FF UID" required
+      pattern="[0-9]+" title="Enter numbers only">
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone${i}"
+      placeholder="Enter phone number"
+      pattern="[0-9]{10}" maxlength="10" required>
+    </div>
+  `;
+}
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const team = document.getElementById("teamName").value;
+
+  let message = "🔥 FREE FIRE TOURNAMENT REGISTRATION 🔥\n\n";
+  message += "🏆 Team Name: " + team + "\n\n";
+
+  for(let i = 1; i <= 4; i++) {
+
+    const name = document.querySelector(
+      `[name="name${i}"]`).value;
+
+    const uid = document.querySelector(
+      `[name="uid${i}"]`).value;
+
+    const phone = document.querySelector(
+      `[name="phone${i}"]`).value;
+
+    message += `👤 PLAYER ${i}\n`;
+    message += `Name: ${name}\n`;
+    message += `FF UID: ${uid}\n`;
+    message += `Phone: ${phone}\n\n`;
+  }
+
+  message += "Please confirm my tournament registration.";
+
+  const whatsappNumber = "919848122275";
+
+  const url = "https://wa.me/" + whatsappNumber +
+  "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
